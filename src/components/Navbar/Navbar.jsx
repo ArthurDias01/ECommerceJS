@@ -67,8 +67,8 @@ const PrimarySearchAppBar = ({ totalItems }) => {
               alt="commerce.js"
               height="25px"
               className={classes.image}
-            />{" "}
-            Commerce.js
+            />
+            Coally e-Commerce
           </Typography>
           <div className={classes.grow} />
           {location.pathname === "/" && (

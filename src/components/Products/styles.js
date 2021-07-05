@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: theme.spacing(12),
+    paddingTop: theme.spacing(7.75),
   },
   drawerHeader: {
     display: "flex",

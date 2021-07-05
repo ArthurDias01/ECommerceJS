@@ -15,7 +15,6 @@ import MailIcon from "@material-ui/icons/Mail";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import IconButton from "@material-ui/core/IconButton";
 
 import Carousel from "react-material-ui-carousel";
@@ -108,6 +107,7 @@ const Products = ({ products, onAddToCart, categories }) => {
           <Typography className={classes.drawerTitle} gutterBottom variant="h4">
             Categorias
           </Typography>
+          <Divider />
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>

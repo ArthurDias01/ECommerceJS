@@ -8,14 +8,15 @@
 
 This repository is meant to be a showcase of e-commerce built using :
 
-[] Commcerce.JS API (Ecommerce Management API)
-[] Stripe API (Payment Method)
+- [ ] Commcerce.JS API (Ecommerce Management API)
+
+- [ ] Stripe API (Payment Method)
 
 The project was built based on https://github.com/adrianhajdin/project_e_commerce
 
 it was added two functionalities:
 
-[] category filters
-[] sidebar drawer responsive menu
+- [ ] category filters
+- [ ] sidebar drawer responsive menu
 
 both using Material UI design components

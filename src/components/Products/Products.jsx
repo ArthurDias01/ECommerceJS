@@ -45,10 +45,10 @@ const Products = ({ products, onAddToCart, categories }) => {
   });
 
   const filtered = productsWithCategories.filter((item) => {
-    if (categoryFiltered != "") {
-      return item.category.name == `${categoryFiltered}`;
+    if (categoryFiltered.length === 0) {
+      return false;
     }
-    return true;
+    return item.category.name === `${categoryFiltered}`;
   });
 
   function Item(props) {
@@ -137,20 +137,51 @@ const Products = ({ products, onAddToCart, categories }) => {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Grid container justify="center" spacing={3}>
-          <Grid item xs={12} justify="center" spacing={3} alignItems="center">
-            <Carousel>
-              {filtered.map((item, i) => (
-                <Item key={i} item={item} />
+        <div>
+          {filtered.length === 0 ? (
+            <Grid container justify="center" spacing={3}>
+              <Grid
+                item
+                xs={12}
+                justify="center"
+                spacing={3}
+                alignItems="center"
+              >
+                <Carousel>
+                  {productsWithCategories.map((item, i) => (
+                    <Item key={i} item={item} />
+                  ))}
+                </Carousel>
+              </Grid>
+              {productsWithCategories.map((product) => (
+                <Grid key={product.id} item xs={12} sm={6} md={4} lg={2}>
+                  <Product product={product} onAddToCart={onAddToCart} />
+                </Grid>
               ))}
-            </Carousel>
-          </Grid>
-          {filtered.map((product) => (
-            <Grid key={product.id} item xs={12} sm={6} md={4} lg={2}>
-              <Product product={product} onAddToCart={onAddToCart} />
             </Grid>
-          ))}
-        </Grid>
+          ) : (
+            <Grid container justify="center" spacing={3}>
+              <Grid
+                item
+                xs={12}
+                justify="center"
+                spacing={3}
+                alignItems="center"
+              >
+                <Carousel>
+                  {filtered.map((item, i) => (
+                    <Item key={i} item={item} />
+                  ))}
+                </Carousel>
+              </Grid>
+              {filtered.map((product) => (
+                <Grid key={product.id} item xs={12} sm={6} md={4} lg={2}>
+                  <Product product={product} onAddToCart={onAddToCart} />
+                </Grid>
+              ))}
+            </Grid>
+          )}
+        </div>
       </main>
     </>
   );
